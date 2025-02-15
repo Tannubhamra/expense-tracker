@@ -17,7 +17,7 @@ export class NotificationService {
 
   private show(message: string, type: SnackbarType, duration: number): void {
     if (!this.currentSnackbar) {
-      // Create and attach new snackbar
+      
       const snackbarComponent = createComponent(SnackbarComponent, {
         environmentInjector: this.appRef.injector,
       });
@@ -29,7 +29,6 @@ export class NotificationService {
       this.currentSnackbar = snackbarComponent;
     }
 
-    // Show the notification
     this.currentSnackbar.instance.show(message, type, duration);
 
     // Clean up when hidden
@@ -38,7 +37,7 @@ export class NotificationService {
         this.currentSnackbar?.destroy();
         this.currentSnackbar = undefined;
       }
-    }, duration + 300); // Add animation duration
+    }, duration + 300);
   }
 
   success(message: string, duration: number = 3000): void {

@@ -7,22 +7,7 @@ import { SnackbarState, SnackbarType } from './snackbar.state';
   selector: 'app-snackbar',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div
-      *ngIf="state().show"
-      [@slideInOut]
-      class="fixed top-4 right-4 z-50 p-4 rounded-md shadow-lg text-white flex items-center justify-between min-w-[300px]"
-      [ngClass]="typeClass()"
-    >
-      <span>{{ state().message }}</span>
-      <button
-        (click)="hide()"
-        class="ml-4 text-white hover:text-gray-200 focus:outline-none"
-      >
-        ×
-      </button>
-    </div>
-  `,
+  templateUrl:'./snackbar.component.html' ,
   animations: [
     trigger('slideInOut', [
       transition(':enter', [
