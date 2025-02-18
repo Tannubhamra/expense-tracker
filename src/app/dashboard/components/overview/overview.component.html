@@ -7,19 +7,16 @@
                 A summary of your financial activity and current status.
             </p>
         </div>
-        <div class="sm:flex-none">
-            <select
-                class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                [ngModel]="selectedCurrency()" (ngModelChange)="currencyService.setCurrency($event)">
-                @for (currency of currencies(); track currency.code) {
-                <option [value]="currency.code">
+        <div class="sm:flex">
+            <select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            [ngModel]="selectedCurrency()"
+            (ngModelChange)="currencyService.setCurrency($event)">
+                <option *ngFor="let currency of currencies(); trackBy: trackByCode" [value]="currency.code">
                     {{ currency.code }} ({{ currency.symbol }})
                 </option>
-                }
             </select>
         </div>
     </div>
-
     <!-- Stats -->
     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Balance Card -->
