@@ -1,7 +1,8 @@
 
-# Login deatial
+# Login detail
 
 username: test@example.com pw: BeHappy
+
 Signup design is done but funtionality is pending.
 
 # how to use
