@@ -3,6 +3,10 @@
 
 username: test@example.com pw: BeHappy
 Signup design is done but funtionality is pending.
+
+# how to use
+Please Refer README-EXPENCE-TRACKER.md
+
 # ExpenseTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.

@@ -4,6 +4,7 @@ import { Income } from '../interfaces/income.interface';
 import { Expense } from '../interfaces/expense.interface';
 import { NotificationService } from '../../core/services/notification.service';
 
+
 const STORAGE_KEYS = {
   INCOMES: 'budget_tracker_incomes',
   EXPENSES: 'budget_tracker_expenses',
@@ -21,7 +22,7 @@ export class TransactionsService {
     this.monthlyBudget = signal<number>(this.loadMonthlyBudget());
     this.savingsGoal = signal<number>(this.loadSavingsGoal());
   }
-
+  
   private incomes = signal<Income[]>(this.loadIncomes());
   private expenses = signal<Expense[]>(this.loadExpenses());
   private monthlyBudget = signal<number>(this.loadMonthlyBudget());

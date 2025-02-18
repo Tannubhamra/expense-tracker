@@ -145,6 +145,10 @@ export class OverviewComponent implements AfterViewInit {
     this.createTrendChart();
   }
 
+  trackByCode(index: number, currency: any) {
+    return currency.code;
+  }
+  
   private createExpensesChart() {
     const categories = this.expensesByCategory();
 
